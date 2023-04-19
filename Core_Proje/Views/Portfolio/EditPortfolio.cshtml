@@ -12,6 +12,7 @@
 
 @using (Html.BeginForm("EditPortfolio", "Portfolio", FormMethod.Post))
 {
+    @Html.HiddenFor(x=>x.PortfolioId)
     <br />
     @Html.Label("Proje Başlığı")
     @Html.TextBoxFor(x=>x.Name, new{ @class = "form-control"})
@@ -42,6 +43,6 @@
     @Html.ValidationMessageFor(x=>x.Platform)
     <br />
 
-    <button type="submit" class="btn btn-info">Kaydet</button>
+    <button type="submit" class="btn btn-info">Güncelle</button>
 }
 

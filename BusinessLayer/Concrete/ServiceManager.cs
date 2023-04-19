@@ -1,11 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
@@ -20,17 +15,17 @@ namespace BusinessLayer.Concrete
 
         public void TAdd(Service t)
         {
-            throw new NotImplementedException();
+            _serviceDal.Insert(t);
         }
 
         public void TDelete(Service t)
         {
-            throw new NotImplementedException();
+            _serviceDal.Delete(t);
         }
 
         public Service TGetByID(int id)
         {
-            throw new NotImplementedException();
+           return _serviceDal.GetByID(id);
         }
 
         public List<Service> TGetList()
@@ -40,7 +35,7 @@ namespace BusinessLayer.Concrete
 
         public void TUpdate(Service t)
         {
-            throw new NotImplementedException();
+            _serviceDal.Update(t);
         }
     }
 }
