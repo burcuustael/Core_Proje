@@ -3,59 +3,45 @@
 
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 
-<div class="row">
-    <div class="col">
-        <div class="card shadow">
-            <div class="card-header border-0">
-                <h3 class="mb-0">Deneyim Listesi Tablosu</h3>
-            </div>
-            <div class="table-responsive">
-                <table class="table align-items-center table-flush">
-                    <thead class="thead-light">
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Deneyimler</h4>
+              <div class="table-responsive">
+                <table class="table">
+                    <thead>
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Başlık</th>
-                            <th scope="col">Tarih</th>
-                            <th scope="col">Sil</th>
-                            <th scope="col">Düzenle</th>
-                            <th scope="col"></th>
+                            <th>#</th>
+                            <th>Başlık</th>
+                            <th>Tarih</th>
+                            <th>Açıklama</th>
+                            <th>Sil</th>
+                            <th>Güncelle</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach (var item in Model)
                         {
-                            <tr>
-                                <th>
-                                    @item.ExperienceId
-                                </th>
-                                <th>
-                                    @item.Name
-                                </th>
-
-                                <th>
-                                    @item.Date
-                                </th>
-
-                                <th>
-                                    @item.Description
-                                </th>
-
-                                <td><a href="/Experience/DeleteExperience/@item.ExperienceId" class="btn btn-danger">Sil</a></td>
-                                <td><a href="/Experience/EditExperience/@item.ExperienceId" class="btn btn-success">Güncelle</a></td>
-
-                            </tr>
+                             <tr>
+                            <td>@item.ExperienceId</td>
+                            <td>@item.Name</td>
+                            <td>@item.Date</td>
+                            <td>@item.Description</td>
+                                <td><a href="/Experience/DeleteExperience/@item.ExperienceId" class="btn btn-outline-danger"> Sil</a></td>
+                                <td><a href="/Experience/EditExperience/@item.ExperienceId" class="btn btn-outline-success"> Güncelle</a></td>
+                              
+                        </tr>
 
                         }
+                 
                     </tbody>
                 </table>
                 <br />
-                <a href="/Experience/AddExperience" class="btn btn-primary"> Yeni Deneyim Ekle</a>
+                <a href="/Experience/AddExperience/" class="btn btn-outline-info">Yeni Deneyim Ekle</a>
             </div>
-
         </div>
     </div>
 </div>
-
