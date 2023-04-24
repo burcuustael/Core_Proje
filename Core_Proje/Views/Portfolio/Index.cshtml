@@ -4,7 +4,7 @@
 
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 
 <div class="row mt-5">
@@ -43,11 +43,11 @@
                                 <td>
                                     @item.Price
                                 </td>
-                                <td>
+                                <th>
                                     <span class="badge badge-dot mr-4">
                                         <i class="bg-success"></i> Tamamlandı
                                     </span>
-                                </td>
+                                </th>
 
                                 <td>
                                     <div class="d-flex align-items-center">
@@ -69,10 +69,9 @@
                         }
                     </tbody>
                 </table>
-
+                <a href="/Portfolio/AddPortfolio/" class="btn btn-info"> Yeni Proje Girişi</a>
             </div>
         </div>
     </div>
 </div>
 
-<a href="/Portfolio/AddPortfolio/" class="btn btn-info"> Yeni Proje Girişi</a>

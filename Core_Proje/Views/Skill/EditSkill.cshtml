@@ -2,24 +2,31 @@
 
 @{
     ViewData["Title"] = "EditSkill";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
 
-<div class="card-header border-0">
-    <h3 class="mb-0">Yetenek Ekleme Sayfası</h3>
+            <p class="card-description">Yetenek Düzenleme Paneli </p>
+            <form class="forms-sample" action="EditSkill" method="post">
+                <div class="form-group">
+                    <label>ID</label>
+                    <input type="text" class="form-control" asp-for="SkillId">
+                </div>
+                <div class="form-group">
+                    <label>Yetenek Başlığı</label>
+                    <input type="text" class="form-control" asp-for="Title">
+                </div>
+                <div class="form-group">
+                    <label>Değer</label>
+                    <input type="text" class="form-control" asp-for="Value">
+                </div>
+
+                <button type="submit" class="btn btn-primary mr-2">Güncelle</button>
+                <button class="btn btn-dark">İptal</button>
+            </form>
+        </div>
+    </div>
 </div>
-
-
-@using (Html.BeginForm("EditSkill","Skill", FormMethod.Post)){
-
-    @Html.HiddenFor(x=>x.SkillId)
-    <br/>
-    @Html.Label("Yetenek Başlığı")
-    @Html.TextBoxFor(x=>x.Title, new{ @class = "form-control"})
-    <br />
-    <label>Değer</label>
-    @Html.TextBoxFor(x=>x.Value, new{ @class = "form-control"})
-    <br />
-    <button type="submit" class="btn btn-primary">Güncelle</button>
-}
