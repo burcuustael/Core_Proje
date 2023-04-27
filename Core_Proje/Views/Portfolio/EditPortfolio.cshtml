@@ -12,7 +12,7 @@
 
 @using (Html.BeginForm("EditPortfolio", "Portfolio", FormMethod.Post))
 {
-    @Html.HiddenFor(x=>x.PortfolioId)
+    @Html.HiddenFor(x=>x.Id)
     <br />
     @Html.Label("Proje Başlığı")
     @Html.TextBoxFor(x=>x.Name, new{ @class = "form-control"})

@@ -13,7 +13,7 @@
 @using (Html.BeginForm("Index", "About", FormMethod.Post))
 {
 
-    @Html.HiddenFor(x=>x.AboutId)
+    @Html.HiddenFor(x=>x.Id)
     <br />
     <label>Başlık</label>
     @Html.TextBoxFor(x=>x.Title, new{ @class = "form-control"})

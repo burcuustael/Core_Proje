@@ -13,7 +13,7 @@
 
 @using (Html.BeginForm("EditService","Service", FormMethod.Post))
 {
-    @Html.HiddenFor(x=>x.ServiceId)
+    @Html.HiddenFor(x=>x.Id)
     <br />
     @Html.Label("Hizmet Başlığı")
     @Html.TextBoxFor(x=>x.Title, new{ @class = "form-control"})
