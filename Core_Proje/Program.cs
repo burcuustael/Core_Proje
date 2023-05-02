@@ -1,7 +1,16 @@
+using DataAccessLayer.Concrete;
+using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Identity;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+//builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddDefaultTokenProviders();
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<Context>();
+builder.Services.AddIdentity<WriterUser, WriterRole>().AddEntityFrameworkStores<Context>();
+
 
 var app = builder.Build();
 
@@ -18,10 +27,11 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
-            name: "areas",
+            name: "writer",
             pattern: "{area:exists}/{controller=Default}/{action=Index}/{id?}"
           );
 
