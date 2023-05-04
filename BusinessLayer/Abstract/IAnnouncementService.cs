@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Abstract
 {
-    public interface IAboutService : IGenericService<About>
+    public interface IAnnouncementService : IGenericService<Announcement>
     {
     }
 }
