@@ -17,10 +17,7 @@ namespace Core_Proje.Controllers
         [HttpGet]
         public IActionResult AddSkill()
         {
-            ViewBag.d1 = "Yenetek Ekleme";
-            ViewBag.d2 = "Ekleme";
-            ViewBag.d3 = "Ekleme";
-            return View();
+                return View();
         }
 
         [HttpPost]

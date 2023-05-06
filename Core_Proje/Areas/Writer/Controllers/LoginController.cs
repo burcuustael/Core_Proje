@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Core_Proje.Areas.Writer.Controllers
 {
     [Area("Writer")]
+    [Route("Writer/[controller]/[action]")]
     public class LoginController : Controller
     {
         private readonly SignInManager<WriterUser> _signInManager;
@@ -29,16 +30,22 @@ namespace Core_Proje.Areas.Writer.Controllers
                 var result = await _signInManager.PasswordSignInAsync(p.Username, p.Password,true,true);
                 if(result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Default");
+                    return RedirectToAction("Index", "Profile");
                 }
                 else
                 {
                     ModelState.AddModelError("", "Hatalı kullanıcı adı veya şifre");
                 }
 
-
             }
             return View();
         }
+
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Login");
+
+        }
     }
-}
+    }

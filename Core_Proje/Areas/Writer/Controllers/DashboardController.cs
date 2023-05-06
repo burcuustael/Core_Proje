@@ -20,7 +20,7 @@ namespace Core_Proje.Areas.Writer.Controllers
         {
             var values = await _userManager.FindByNameAsync(User.Identity.Name);
             ViewBag.v = values.Name + " " + values.SurName;
-
+             
             //Weather APİ
 
             string api = "c8345e44758fa1d8c34decff1dcbc24b";
@@ -32,9 +32,9 @@ namespace Core_Proje.Areas.Writer.Controllers
             //statistics
 
             Context c = new Context();
-            ViewBag.v1 = 0;
+            ViewBag.v1 = c.WriterMessages.Where(x=>x.Receiver==values.Email).Count();
             ViewBag.v2 = c.Announcements.Count();
-            ViewBag.v3 = 0;
+            ViewBag.v3 = c.Users.Count();
             ViewBag.v4 = c.Skills.Count();
 
             return View();

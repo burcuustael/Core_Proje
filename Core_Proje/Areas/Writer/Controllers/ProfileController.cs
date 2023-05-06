@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Core_Proje.Areas.Writer.Controllers
 {
     [Area("Writer")]
+    [Route("Writer/[controller]/[action]")]
     public class ProfileController : Controller
     {
         private readonly UserManager<WriterUser> _userManager;
@@ -27,7 +28,7 @@ namespace Core_Proje.Areas.Writer.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> IndexAsync(UserEditViewModel p)
+        public async Task<IActionResult> Index(UserEditViewModel p)
         {
             var user = await _userManager.FindByNameAsync(User.Identity.Name);
             if (p.Picture != null)
@@ -43,10 +44,12 @@ namespace Core_Proje.Areas.Writer.Controllers
 
             user.Name = p.Name;
             user.SurName = p.Surname;
+            user.PasswordHash = _userManager.PasswordHasher.HashPassword(user, p.Password);
+
             var result = await _userManager.UpdateAsync(user);
             if (result.Succeeded)
             {
-                return RedirectToAction("Index", "Default");
+                return RedirectToAction("Index", "Login");
             }
 
             return View();
