@@ -1,11 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
@@ -25,17 +20,17 @@ namespace BusinessLayer.Concrete
 
         public void TDelete(Message t)
         {
-            throw new NotImplementedException();
+           _messageDal.Delete(t);
         }
 
         public Message TGetByID(int id)
         {
-            throw new NotImplementedException();
+            return _messageDal.GetByID(id);
         }
 
         public List<Message> TGetList()
         {
-            throw new NotImplementedException();
+            return _messageDal.GetList();
         }
 
         public List<Message> TGetListByFilter()
