@@ -1,10 +1,8 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace Core_Proje.Controllers
 {
-    
-    public class DashboardController : Controller
+    public class ErrorPageController : Controller
     {
         public IActionResult Index()
         {

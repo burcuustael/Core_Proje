@@ -1,5 +1,6 @@
 ﻿using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Xml.Linq;
@@ -7,7 +8,7 @@ using System.Xml.Linq;
 namespace Core_Proje.Areas.Writer.Controllers
 {
     [Area("Writer")]
-    public class DashboardController : Controller
+     public class DashboardController : Controller
     {
         private readonly UserManager<WriterUser> _userManager;
 

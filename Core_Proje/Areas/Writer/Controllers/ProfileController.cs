@@ -1,5 +1,6 @@
 ﻿using Core_Proje.Areas.Writer.Models;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,6 +8,7 @@ namespace Core_Proje.Areas.Writer.Controllers
 {
     [Area("Writer")]
     [Route("Writer/[controller]/[action]")]
+  
     public class ProfileController : Controller
     {
         private readonly UserManager<WriterUser> _userManager;

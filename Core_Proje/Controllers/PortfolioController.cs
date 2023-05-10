@@ -4,11 +4,13 @@ using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation;
 using FluentValidation.Results;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 
 namespace Core_Proje.Controllers
 {
+  
     public class PortfolioController : Controller
     {
         PortfolioManager portfolioManager = new PortfolioManager(new EfPortfolioDal());
