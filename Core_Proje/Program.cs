@@ -42,6 +42,8 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.UseStatusCodePagesWithReExecute("/ErrorPage/Error404/"); // bu 404 sayfalarý ile alakalý
+
 app.UseHttpsRedirection();
 
 app.UseStaticFiles();
