@@ -15,9 +15,8 @@
                                     <th> Proje Adı </th>
                                     <th> URL </th>
                                     <th> Fiyat </th>
-
                                     <th> Tamamlanma</th>
-                                    <th> Durum </th>
+                                    <th> Detaylar </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -33,9 +32,10 @@
                                     <td> @item.ProjectUrl  </td>
                                     <td> @item.Price </td>
                                     <td> % @item.Value  </td>
-                                   
                                     <td>
-                                        <div class="badge badge-outline-success">Approved</div>
+                                        <a href="/Portfolio/EditPortfolio/@item.Id ">
+                                        <div class="badge badge-outline-success">Detayları Gör</div>
+                                        </a>
                                     </td>
                                 </tr>
                             }
