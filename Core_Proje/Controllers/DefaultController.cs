@@ -26,20 +26,19 @@ namespace Core_Proje.Controllers
         }
 
         [HttpGet]
-        public PartialViewResult SendMessage() 
+        public IActionResult SendMessage() 
         {
-
-            return PartialView();
-         }
+            return View();
+        }
 
         [HttpPost]
-        public PartialViewResult SendMessage(Message p)
+        public IActionResult SendMessage(Message p)
         {
             MessageManager messageManager = new MessageManager(new EfMessageDal());
             p.Date = Convert.ToDateTime(DateTime.Now.ToShortDateString());
             p.Status = true;
             messageManager.TAdd(p);
-            return PartialView();
+            return RedirectToAction("Index");
 
         }
 
