@@ -27,9 +27,9 @@ builder.Services.AddMvc();
 builder.Services.ConfigureApplicationCookie(options =>
 {
     options.Cookie.HttpOnly = true;
-    options.ExpireTimeSpan = TimeSpan.FromMinutes(100);
-    options.AccessDeniedPath= "/ErrorPage/Index";
-    options.LoginPath = "/Writer/Login/Index";
+    options.ExpireTimeSpan = TimeSpan.FromHours(12);
+    options.AccessDeniedPath= "/ErrorPage/Index/";
+    options.LoginPath = "/Writer/Login/Index/";
 });
 
 var app = builder.Build();

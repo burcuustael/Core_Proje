@@ -32,7 +32,7 @@ namespace Core_Proje.Areas.Writer.Controllers
                 var result = await _signInManager.PasswordSignInAsync(p.Username, p.Password,true,true);
                 if(result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Profile");
+                    return RedirectToAction("Index", "Profile" ,new {area="Writer"});
                 }
                 else
                 {
