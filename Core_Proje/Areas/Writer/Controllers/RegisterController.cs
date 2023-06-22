@@ -38,8 +38,9 @@ namespace Core_Proje.Areas.Writer.Controllers
             };
 
             if (userRegisterViewModel.Password == userRegisterViewModel.ConfirmPassword)
-            {
+            { 
                 var result = await _userManager.CreateAsync(w, userRegisterViewModel.Password);
+                await _userManager.AddToRoleAsync(w, WriterRole.Writer);
 
                 if (result.Succeeded)
                 {

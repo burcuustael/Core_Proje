@@ -9,5 +9,9 @@ namespace EntityLayer.Concrete
 {
     public class WriterRole : IdentityRole<int>
     {
+        public const string Writer = "Writer";
+        public const string Admin = "Admin";
+        public const string Moderator = "Moderator";
+
     }
 }

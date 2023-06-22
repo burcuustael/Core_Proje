@@ -8,7 +8,7 @@ namespace DataAccessLayer.Concrete
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=77.245.159.27;database=CVDB; user=burcu08;password=Suheyla12*");
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;database=CoreProjeDB; integrated security=true; ");
           
             base.OnConfiguring(optionsBuilder);
         }
